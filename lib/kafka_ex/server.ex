@@ -412,6 +412,7 @@ defmodule KafkaEx.Server do
       defp kafka_common_init(args, name) do
         use_ssl = Keyword.get(args, :use_ssl, false)
         ssl_options = Keyword.get(args, :ssl_options, [])
+        client_id = Keyword.get(args, :client_id, "kafka_ex")
 
         uris = Keyword.get(args, :uris, [])
         metadata_update_interval = Keyword.get(
